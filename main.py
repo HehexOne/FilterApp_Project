@@ -52,6 +52,9 @@ class Example(QMainWindow, Ui_MainWindow):
             return
         img = Image.open(self.image_path)
         img = img.filter(filt)
+        img = ImageEnhance.Brightness(img).enhance(self.brightness / 50)
+        img = ImageEnhance.Color(img).enhance(self.color / 50)
+        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
         img.save(self.temp_image)
         img.close()
 
@@ -107,10 +110,19 @@ class Example(QMainWindow, Ui_MainWindow):
     def nashville_filter(self):
         self.apply_filter(None)
         self.reload_image()
+        self.brightness = 50
+        self.color = 50
+        self.contrast = 50
+        self.brightness_dial_event_stay("")
+        self.color_dial_event_stay("")
+        self.contrast_dial_event_stay("")
 
     # Brightness mouse event
     def brightness_dial_event(self, e):
-        img = ImageEnhance.Brightness(Image.open(self.temp_image)).enhance(self.brightness / 50)
+        self.brightness = self.brightness_dial.value()
+        img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
+        img = ImageEnhance.Color(img).enhance(self.color / 50)
+        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
         img.save(self.temp_image)
         img.close()
         self.reload_image()
@@ -121,7 +133,10 @@ class Example(QMainWindow, Ui_MainWindow):
 
     # Color mouse event
     def color_dial_event(self, e):
-        img = ImageEnhance.Color(Image.open(self.temp_image)).enhance(self.color / 50)
+        self.color = self.color_dial.value()
+        img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
+        img = ImageEnhance.Color(img).enhance(self.color / 50)
+        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
         img.save(self.temp_image)
         img.close()
         self.reload_image()
@@ -132,7 +147,10 @@ class Example(QMainWindow, Ui_MainWindow):
 
     # Contrast mouse event
     def contrast_dial_event(self, e):
-        img = ImageEnhance.Contrast(Image.open(self.temp_image)).enhance(self.contrast / 50)
+        self.contrast = self.contrast_dial.value()
+        img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
+        img = ImageEnhance.Color(img).enhance(self.color / 50)
+        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
         img.save(self.temp_image)
         img.close()
         self.reload_image()
@@ -140,6 +158,7 @@ class Example(QMainWindow, Ui_MainWindow):
     # Don't use keyboard, please
     def contrast_dial_event_stay(self, e):
         self.contrast_dial.setValue(self.contrast)
+
 
 
 app = QApplication(sys.argv)
