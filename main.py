@@ -40,7 +40,9 @@ class Example(QMainWindow, Ui_MainWindow):
         self.reload_image()
 
     def save_image(self):
-        pass
+        filt = "Images (*.png *.jpg)"
+        self.image_path, _ = QFileDialog.getSaveFileName(self, 'Save your image', filter=filt)
+        copy(self.temp_image, self.image_path)
 
     def kelvin_filter(self):
         pass
