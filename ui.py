@@ -121,5 +121,5 @@ class Ui_MainWindow(object):
         self.gotham_button.setText(_translate("MainWindow", "Gotham"))
         self.kelvin_button.setText(_translate("MainWindow", "Kelvin"))
         self.lomo_button.setText(_translate("MainWindow", "LOMO"))
-        self.nashville_button.setText(_translate("MainWindow", "Nashville"))
+        self.nashville_button.setText(_translate("MainWindow", "Отмена"))
 

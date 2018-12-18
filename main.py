@@ -30,6 +30,11 @@ class Example(QMainWindow, Ui_MainWindow):
             i.setEnabled(False)
 
     def apply_filter(self, filt):
+        if filt is None:
+            img = Image.open(self.image_path)
+            img.save(self.temp_image)
+            img.close()
+            return
         img = Image.open(self.image_path)
         img = img.filter(filt)
         img.save(self.temp_image)
@@ -65,11 +70,11 @@ class Example(QMainWindow, Ui_MainWindow):
         copy(self.temp_image, self.image_path)
 
     def kelvin_filter(self):
-        self.apply_filter(ImageFilter.MedianFilter(1))
+        self.apply_filter(ImageFilter.EMBOSS)
         self.reload_image()
 
     def lomo_filter(self):
-        self.apply_filter(ImageFilter.SHARPEN)
+        self.apply_filter(ImageFilter.CONTOUR)
         self.reload_image()
 
     def gotham_filter(self):
@@ -77,7 +82,7 @@ class Example(QMainWindow, Ui_MainWindow):
         self.reload_image()
 
     def nashville_filter(self):
-        self.apply_filter(ImageFilter.GaussianBlur(10))
+        self.apply_filter(None)
         self.reload_image()
 
 

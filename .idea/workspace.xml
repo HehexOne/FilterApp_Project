@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="38eb3758-cf9a-4645-a5b8-f5af8193ec5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/border.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/frame.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/frames/Kelvin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/frames/Nashville.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/vignette.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/gotham.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/kelvin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/lomo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/nashville.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/toaster.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/fTHWAPzWmf0.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,15 +13,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/untitled$main.coverage" NAME="main Coverage Results" MODIFIED="1545159613444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled$main.coverage" NAME="main Coverage Results" MODIFIED="1545160165561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+            <state relative-caret-position="357">
+              <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
               <folding>
                 <element signature="e#44#54#0" expanded="true" />
               </folding>
@@ -94,11 +84,6 @@
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled" type="462c0819:PsiDirectoryNode" />
-              <item name="tmp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -170,12 +155,12 @@
       <workItem from="1543749029277" duration="2604000" />
       <workItem from="1544292625109" duration="1163000" />
       <workItem from="1545068821894" duration="604000" />
-      <workItem from="1545152223190" duration="7220000" />
+      <workItem from="1545152223190" duration="7772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11591000" />
+    <option name="totallyTimeSpent" value="12143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
@@ -333,10 +318,13 @@
     <entry file="file://$PROJECT_DIR$/tmp/octo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/fTHWAPzWmf0.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+        <state relative-caret-position="357">
+          <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
           <folding>
             <element signature="e#44#54#0" expanded="true" />
           </folding>
