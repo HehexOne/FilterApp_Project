@@ -43,6 +43,20 @@ class Example(QMainWindow, Ui_MainWindow):
         for i in self.buttons:
             i.setEnabled(False)
 
+    # Function for enhance Brightness, Contrast and Color with PIL
+    def enhance_image(self, image, standalone):
+        if not standalone:
+            img = ImageEnhance.Brightness(image).enhance(self.brightness / 50)
+            img = ImageEnhance.Color(img).enhance(self.color / 50)
+            img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
+            return img
+        else:
+            img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
+            img = ImageEnhance.Color(img).enhance(self.color / 50)
+            img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
+            img.save(self.temp_image)
+            img.close()
+
     # Applying filter function, accepts filter and saving image to temp location
     def apply_filter(self, filt):
         if filt is None:
@@ -51,10 +65,7 @@ class Example(QMainWindow, Ui_MainWindow):
             img.close()
             return
         img = Image.open(self.image_path)
-        img = img.filter(filt)
-        img = ImageEnhance.Brightness(img).enhance(self.brightness / 50)
-        img = ImageEnhance.Color(img).enhance(self.color / 50)
-        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
+        img = self.enhance_image(img.filter(filt), False)
         img.save(self.temp_image)
         img.close()
 
@@ -120,11 +131,7 @@ class Example(QMainWindow, Ui_MainWindow):
     # Brightness mouse event
     def brightness_dial_event(self, e):
         self.brightness = self.brightness_dial.value()
-        img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
-        img = ImageEnhance.Color(img).enhance(self.color / 50)
-        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
-        img.save(self.temp_image)
-        img.close()
+        self.enhance_image(Image.open(self.image_path), True)
         self.reload_image()
 
     # Don't use keyboard, please
@@ -134,11 +141,7 @@ class Example(QMainWindow, Ui_MainWindow):
     # Color mouse event
     def color_dial_event(self, e):
         self.color = self.color_dial.value()
-        img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
-        img = ImageEnhance.Color(img).enhance(self.color / 50)
-        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
-        img.save(self.temp_image)
-        img.close()
+        self.enhance_image(Image.open(self.image_path), True)
         self.reload_image()
 
     # Don't use keyboard, please
@@ -148,11 +151,7 @@ class Example(QMainWindow, Ui_MainWindow):
     # Contrast mouse event
     def contrast_dial_event(self, e):
         self.contrast = self.contrast_dial.value()
-        img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
-        img = ImageEnhance.Color(img).enhance(self.color / 50)
-        img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
-        img.save(self.temp_image)
-        img.close()
+        self.enhance_image(Image.open(self.image_path), True)
         self.reload_image()
 
     # Don't use keyboard, please
