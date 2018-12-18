@@ -1,10 +1,10 @@
-from instagram_filters.filter import Filter
-from instagram_filters.decorations import Frame
+from filter import Filter
+from decorations.frame import Frame
 
 import inspect, os
 
 
-class Nashville(Filter, Frame):
+class Nashville(Frame, Filter):
 	
 	def apply(self):
 		self.colortone('#222b6d', 50, 0);

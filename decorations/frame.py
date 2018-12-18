@@ -1,4 +1,4 @@
-from instagram_filters.filter import Filter
+from filter import Filter
 
 import os, inspect
 

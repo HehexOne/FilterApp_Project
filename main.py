@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PyQt5.QtWidgets import (QApplication, QMainWindow)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QMessageBox)
 from filters import gotham, kelvin, lomo, nashville
 from ui import Ui_MainWindow
 
@@ -22,7 +22,9 @@ class Example(QMainWindow, Ui_MainWindow):
         self.nashville_button.clicked.connect(self.nashville_filter)
 
     def open_image(self):
-        pass
+        filt = "Images (*.png *.jpg)"
+        self.image_path, _ = QFileDialog.getOpenFileName(self, 'Open your image', filter=filt)
+
 
     def save_image(self):
         pass

@@ -1,5 +1,5 @@
 import math
-from instagram_filters.filter import Filter
+from filter import Filter
 
 class Vignette(Filter):
 	def vignette(self, color_1 = 'none', color_2 = 'black', crop_factor = 1.5):
