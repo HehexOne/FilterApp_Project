@@ -11,6 +11,30 @@ class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.open_button.clicked.connect(self.open_image)
+        self.save_button.clicked.connect(self.save_image)
+        self.kelvin_button.clicked.connect(self.kelvin_filter)
+        self.gotham_button.clicked.connect(self.gotham_filter)
+        self.lomo_button.clicked.connect(self.lomo_filter)
+        self.nashville_button.clicked.connect(self.nashville_filter)
+
+    def open_image(self):
+        pass
+
+    def save_image(self):
+        pass
+
+    def kelvin_filter(self):
+        pass
+
+    def lomo_filter(self):
+        pass
+
+    def gotham_filter(self):
+        pass
+
+    def nashville_filter(self):
+        pass
 
 
 app = QApplication(sys.argv)
