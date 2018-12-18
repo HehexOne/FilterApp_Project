@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
         self.brightness_label.setObjectName("brightness_label")
         self.parameters_layout.addWidget(self.brightness_label)
         self.brightness_dial = QtWidgets.QDial(self.verticalLayoutWidget_2)
-        self.brightness_dial.setMaximum(99)
+        self.brightness_dial.setMaximum(100)
         self.brightness_dial.setProperty("value", 50)
         self.brightness_dial.setObjectName("brightness_dial")
         self.parameters_layout.addWidget(self.brightness_dial)

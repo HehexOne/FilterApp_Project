@@ -26,6 +26,20 @@ class Example(QMainWindow, Ui_MainWindow):
         self.nashville_button.clicked.connect(self.nashville_filter)
         self.buttons = [self.save_button, self.kelvin_button, self.gotham_button, self.lomo_button,
                         self.nashville_button, self.brightness_dial, self.contrast_dial, self.color_dial]
+
+        self.brightness = 50
+        self.color = 50
+        self.contrast = 50
+
+        self.brightness_dial.mouseReleaseEvent = self.brightness_dial_event
+        self.brightness_dial.keyReleaseEvent = self.brightness_dial_event_stay
+
+        self.color_dial.mouseReleaseEvent = self.color_dial_event
+        self.color_dial.keyReleaseEvent = self.color_dial_event_stay
+
+        self.contrast_dial.mouseReleaseEvent = self.contrast_dial_event
+        self.contrast_dial.keyReleaseEvent = self.contrast_dial_event_stay
+
         for i in self.buttons:
             i.setEnabled(False)
 
@@ -84,6 +98,24 @@ class Example(QMainWindow, Ui_MainWindow):
     def nashville_filter(self):
         self.apply_filter(None)
         self.reload_image()
+
+    def brightness_dial_event(self, e):
+        self.brightness = self.brightness_dial.value()
+
+    def brightness_dial_event_stay(self, e):
+        self.brightness_dial.setValue(self.brightness)
+
+    def color_dial_event(self, e):
+        self.color = self.color_dial.value()
+
+    def color_dial_event_stay(self, e):
+        self.color_dial.setValue(self.color)
+
+    def contrast_dial_event(self, e):
+        self.contrast = self.contrast_dial.value()
+
+    def contrast_dial_event_stay(self, e):
+        self.contrast_dial.setValue(self.contrast)
 
 
 app = QApplication(sys.argv)
