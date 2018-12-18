@@ -3,6 +3,7 @@
 
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow)
+from filters import gotham, kelvin, lomo, nashville
 from ui import Ui_MainWindow
 
 
@@ -11,6 +12,8 @@ class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.image_path = ""
+        self.temp_image = ""
         self.open_button.clicked.connect(self.open_image)
         self.save_button.clicked.connect(self.save_image)
         self.kelvin_button.clicked.connect(self.kelvin_filter)

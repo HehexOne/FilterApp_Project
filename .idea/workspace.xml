@@ -2,6 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38eb3758-cf9a-4645-a5b8-f5af8193ec5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/decorations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/decorations/border.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/decorations/frame.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/decorations/frames/Kelvin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/decorations/frames/Nashville.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/decorations/vignette.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filters/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filters/gotham.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filters/kelvin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filters/lomo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filters/nashville.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/instagram-filters-master/filters/toaster.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-              <folding>
-                <element signature="e#44#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -73,6 +84,11 @@
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -144,18 +160,17 @@
       <workItem from="1543749029277" duration="2604000" />
       <workItem from="1544292625109" duration="1163000" />
       <workItem from="1545068821894" duration="604000" />
-      <workItem from="1545152223190" duration="1718000" />
+      <workItem from="1545152223190" duration="1968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6089000" />
+    <option name="totallyTimeSpent" value="6339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -193,13 +208,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libs/instagram-filters-master/decorations/frames/Nashville.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/instagram-filters-master/decorations/frames/Kelvin.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-          <folding>
-            <element signature="e#44#54#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
     </entry>
