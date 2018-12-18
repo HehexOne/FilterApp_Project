@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38eb3758-cf9a-4645-a5b8-f5af8193ec5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/border.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorations/border.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorations/frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorations/vignette.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorations/vignette.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/gotham.py" beforeDir="false" afterPath="$PROJECT_DIR$/filters/gotham.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/kelvin.py" beforeDir="false" afterPath="$PROJECT_DIR$/filters/kelvin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/lomo.py" beforeDir="false" afterPath="$PROJECT_DIR$/filters/lomo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters/nashville.py" beforeDir="false" afterPath="$PROJECT_DIR$/filters/nashville.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,15 +11,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/untitled$main.coverage" NAME="main Coverage Results" MODIFIED="1545155809840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled$main.coverage" NAME="main Coverage Results" MODIFIED="1545156839730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="187">
+              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
               <folding>
                 <element signature="e#44#54#0" expanded="true" />
               </folding>
@@ -95,11 +82,6 @@
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled" type="462c0819:PsiDirectoryNode" />
-              <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -171,12 +153,12 @@
       <workItem from="1543749029277" duration="2604000" />
       <workItem from="1544292625109" duration="1163000" />
       <workItem from="1545068821894" duration="604000" />
-      <workItem from="1545152223190" duration="3612000" />
+      <workItem from="1545152223190" duration="4481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7983000" />
+    <option name="totallyTimeSpent" value="8852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
@@ -330,8 +312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="187">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
           <folding>
             <element signature="e#44#54#0" expanded="true" />
           </folding>
