@@ -6,7 +6,7 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog)
 from PyQt5.QtGui import QPixmap
-from filters import gotham, kelvin, lomo, nashville
+from PIL import Image, ImageFilter
 from ui import Ui_MainWindow
 from shutil import copy
 
@@ -24,6 +24,16 @@ class Example(QMainWindow, Ui_MainWindow):
         self.gotham_button.clicked.connect(self.gotham_filter)
         self.lomo_button.clicked.connect(self.lomo_filter)
         self.nashville_button.clicked.connect(self.nashville_filter)
+        self.buttons = [self.save_button, self.kelvin_button, self.gotham_button, self.lomo_button,
+                        self.nashville_button, self.brightness_dial, self.contrast_dial, self.color_dial]
+        for i in self.buttons:
+            i.setEnabled(False)
+
+    def apply_filter(self, filt):
+        img = Image.open(self.image_path)
+        img = img.filter(filt)
+        img.save(self.temp_image)
+        img.close()
 
     def reload_image(self):
         pixmap = QPixmap(self.temp_image).scaled(self.image_label.size(), Qt.KeepAspectRatio)
@@ -35,26 +45,40 @@ class Example(QMainWindow, Ui_MainWindow):
 
     def open_image(self):
         filt = "Images (*.png *.jpg)"
+        tmp_img = self.image_path
         self.image_path, _ = QFileDialog.getOpenFileName(self, 'Open your image', filter=filt)
+        if self.image_path == '':
+            self.image_path = tmp_img
+            return
         self.copy_to_tmp()
         self.reload_image()
+        for i in self.buttons:
+            i.setEnabled(True)
 
     def save_image(self):
         filt = "Images (*.png *.jpg)"
+        tmp_img = self.image_path
         self.image_path, _ = QFileDialog.getSaveFileName(self, 'Save your image', filter=filt)
+        if self.image_path == '':
+            self.image_path = tmp_img
+            return
         copy(self.temp_image, self.image_path)
 
     def kelvin_filter(self):
-        pass
+        self.apply_filter(ImageFilter.MedianFilter(1))
+        self.reload_image()
 
     def lomo_filter(self):
-        pass
+        self.apply_filter(ImageFilter.SHARPEN)
+        self.reload_image()
 
     def gotham_filter(self):
-        pass
+        self.apply_filter(ImageFilter.EDGE_ENHANCE_MORE)
+        self.reload_image()
 
     def nashville_filter(self):
-        pass
+        self.apply_filter(ImageFilter.GaussianBlur(10))
+        self.reload_image()
 
 
 app = QApplication(sys.argv)

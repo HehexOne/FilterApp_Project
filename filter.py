@@ -1,7 +1,7 @@
 # inspired from http://net.tutsplus.com/tutorials/php/create-instagram-filters-with-php/
 
 import subprocess
-import PIL.Image
+from PIL import Image
 import math
 
 class Filter:
@@ -21,7 +21,8 @@ class Filter:
 			width = self.image().size[0],
 			height = self.image().size[1]
 		)
-		format = dict(default.items() + kwargs.items())
+		default.update(kwargs)
+		format = dict(default.items())
 		command = command.format(**format)
 		error = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
 		return error
