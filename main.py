@@ -6,7 +6,7 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog)
 from PyQt5.QtGui import QPixmap
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageEnhance
 from ui import Ui_MainWindow
 from shutil import copy
 
@@ -43,6 +43,7 @@ class Example(QMainWindow, Ui_MainWindow):
         for i in self.buttons:
             i.setEnabled(False)
 
+    # Applying filter function, accepts filter and saving image to temp location
     def apply_filter(self, filt):
         if filt is None:
             img = Image.open(self.image_path)
@@ -54,14 +55,17 @@ class Example(QMainWindow, Ui_MainWindow):
         img.save(self.temp_image)
         img.close()
 
+    # Reloading image in image_label
     def reload_image(self):
         pixmap = QPixmap(self.temp_image).scaled(self.image_label.size(), Qt.KeepAspectRatio)
         self.image_label.setPixmap(pixmap)
 
+    # Copy file to temp location (For opening)
     def copy_to_tmp(self):
         copy(self.image_path, "tmp/")
         self.temp_image = "tmp/" + self.image_path.split("/")[-1]
 
+    # Open image with QFileDialog
     def open_image(self):
         filt = "Images (*.png *.jpg)"
         tmp_img = self.image_path
@@ -74,6 +78,7 @@ class Example(QMainWindow, Ui_MainWindow):
         for i in self.buttons:
             i.setEnabled(True)
 
+    # Save image with QFileDialog
     def save_image(self):
         filt = "Images (*.png *.jpg)"
         tmp_img = self.image_path
@@ -83,37 +88,56 @@ class Example(QMainWindow, Ui_MainWindow):
             return
         copy(self.temp_image, self.image_path)
 
+    # Filter on button Kelvin
     def kelvin_filter(self):
         self.apply_filter(ImageFilter.EMBOSS)
         self.reload_image()
 
+    # Filter on button LOMO
     def lomo_filter(self):
         self.apply_filter(ImageFilter.CONTOUR)
         self.reload_image()
 
+    # Filter on button Gotham
     def gotham_filter(self):
         self.apply_filter(ImageFilter.EDGE_ENHANCE_MORE)
         self.reload_image()
 
+    # Cancel filter button
     def nashville_filter(self):
         self.apply_filter(None)
         self.reload_image()
 
+    # Brightness mouse event
     def brightness_dial_event(self, e):
-        self.brightness = self.brightness_dial.value()
+        img = ImageEnhance.Brightness(Image.open(self.temp_image)).enhance(self.brightness / 50)
+        img.save(self.temp_image)
+        img.close()
+        self.reload_image()
 
+    # Don't use keyboard, please
     def brightness_dial_event_stay(self, e):
         self.brightness_dial.setValue(self.brightness)
 
+    # Color mouse event
     def color_dial_event(self, e):
-        self.color = self.color_dial.value()
+        img = ImageEnhance.Color(Image.open(self.temp_image)).enhance(self.color / 50)
+        img.save(self.temp_image)
+        img.close()
+        self.reload_image()
 
+    # Don't use keyboard, please
     def color_dial_event_stay(self, e):
         self.color_dial.setValue(self.color)
 
+    # Contrast mouse event
     def contrast_dial_event(self, e):
-        self.contrast = self.contrast_dial.value()
+        img = ImageEnhance.Contrast(Image.open(self.temp_image)).enhance(self.contrast / 50)
+        img.save(self.temp_image)
+        img.close()
+        self.reload_image()
 
+    # Don't use keyboard, please
     def contrast_dial_event_stay(self, e):
         self.contrast_dial.setValue(self.contrast)
 
