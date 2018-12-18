@@ -160,7 +160,6 @@ class Example(QMainWindow, Ui_MainWindow):
         self.contrast_dial.setValue(self.contrast)
 
 
-
 app = QApplication(sys.argv)
 ex = Example()
 ex.show()
