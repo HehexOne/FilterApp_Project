@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Filters v0.1"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Not PS"))
         self.image_label.setText(_translate("MainWindow", "Чтобы приступить к обработке, откройте изображение."))
         self.functions_label.setText(_translate("MainWindow", "Функции"))
         self.open_button.setText(_translate("MainWindow", "Открыть"))
