@@ -24,8 +24,10 @@ class Example(QMainWindow, Ui_MainWindow):
         self.gotham_button.clicked.connect(self.gotham_filter)
         self.lomo_button.clicked.connect(self.lomo_filter)
         self.nashville_button.clicked.connect(self.nashville_filter)
-        self.buttons = [self.save_button, self.kelvin_button, self.gotham_button, self.lomo_button,
-                        self.nashville_button, self.brightness_dial, self.contrast_dial, self.color_dial]
+        self.buttons = [self.save_button, self.kelvin_button,
+                        self.gotham_button, self.lomo_button,
+                        self.nashville_button, self.brightness_dial,
+                        self.contrast_dial, self.color_dial]
 
         self.brightness = 50
         self.color = 50
@@ -51,13 +53,15 @@ class Example(QMainWindow, Ui_MainWindow):
             img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
             return img
         else:
-            img = ImageEnhance.Brightness(Image.open(self.image_path)).enhance(self.brightness / 50)
+            img = ImageEnhance.Brightness(Image.open(self.image_path))\
+                .enhance(self.brightness / 50)
             img = ImageEnhance.Color(img).enhance(self.color / 50)
             img = ImageEnhance.Contrast(img).enhance(self.contrast / 50)
             img.save(self.temp_image)
             img.close()
 
-    # Applying filter function, accepts filter and saving image to temp location
+    # Applying filter function, accepts filter and saving image
+    #  to temp location
     def apply_filter(self, filt):
         if filt is None:
             img = Image.open(self.image_path)
@@ -71,7 +75,8 @@ class Example(QMainWindow, Ui_MainWindow):
 
     # Reloading image in image_label
     def reload_image(self):
-        pixmap = QPixmap(self.temp_image).scaled(self.image_label.size(), Qt.KeepAspectRatio)
+        pixmap = QPixmap(self.temp_image).scaled(self.image_label.size(),
+                                                 Qt.KeepAspectRatio)
         self.image_label.setPixmap(pixmap)
 
     # Copy file to temp location (For opening)
@@ -84,9 +89,11 @@ class Example(QMainWindow, Ui_MainWindow):
         filt = "Images (*.png *.jpg)"
         tmp_img = self.image_path
         try:
-            self.image_path, _ = QFileDialog.getOpenFileName(self, 'Open your image', filter=filt)
+            self.image_path, _ = QFileDialog.getOpenFileName(self,
+                                                             'Open your image',
+                                                             filter=filt)
             self.copy_to_tmp()
-        except TypeError:
+        except Exception:
             self.image_path = tmp_img
             return
 
@@ -99,12 +106,13 @@ class Example(QMainWindow, Ui_MainWindow):
         filt = "Images (*.png *.jpg)"
         tmp_img = self.image_path
         try:
-            self.image_path, _ = QFileDialog.getSaveFileName(self, 'Save your image', filter=filt)
+            self.image_path, _ = QFileDialog.getSaveFileName(self,
+                                                             'Save your image',
+                                                             filter=filt)
             copy(self.temp_image, self.image_path)
-        except TypeError:
+        except Exception:
             self.image_path = tmp_img
             return
-        
 
     # Filter on button Kelvin
     def kelvin_filter(self):
