@@ -83,11 +83,13 @@ class Example(QMainWindow, Ui_MainWindow):
     def open_image(self):
         filt = "Images (*.png *.jpg)"
         tmp_img = self.image_path
-        self.image_path, _ = QFileDialog.getOpenFileName(self, 'Open your image', filter=filt)
-        if self.image_path == '':
+        try:
+            self.image_path, _ = QFileDialog.getOpenFileName(self, 'Open your image', filter=filt)
+            self.copy_to_tmp()
+        except TypeError:
             self.image_path = tmp_img
             return
-        self.copy_to_tmp()
+
         self.reload_image()
         for i in self.buttons:
             i.setEnabled(True)
@@ -96,11 +98,13 @@ class Example(QMainWindow, Ui_MainWindow):
     def save_image(self):
         filt = "Images (*.png *.jpg)"
         tmp_img = self.image_path
-        self.image_path, _ = QFileDialog.getSaveFileName(self, 'Save your image', filter=filt)
-        if self.image_path == '':
+        try:
+            self.image_path, _ = QFileDialog.getSaveFileName(self, 'Save your image', filter=filt)
+            copy(self.temp_image, self.image_path)
+        except TypeError:
             self.image_path = tmp_img
             return
-        copy(self.temp_image, self.image_path)
+        
 
     # Filter on button Kelvin
     def kelvin_filter(self):
